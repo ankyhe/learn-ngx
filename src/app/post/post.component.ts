@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { fetchPosts } from './store/post.action';
 import { Observable } from 'rxjs';
 import { Post } from './model/post.model';
-import { State } from './store/post.reducer';
+import { PostState } from './store/post.reducer';
 import { getStatePosts } from './store/post.selector'
 
 @Component({
@@ -14,7 +14,7 @@ import { getStatePosts } from './store/post.selector'
 export class PostComponent implements OnInit {
   posts$: Observable<Post[]>;
  
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<PostState>) {
     this.posts$ = this.store.select(getStatePosts);
   }
  

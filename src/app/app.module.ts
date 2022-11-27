@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from './post/store/post.reducer';
 import { PostEffects } from './post/store/post.effect';
 import { PostModule } from './post/post.module';
 
@@ -18,9 +17,9 @@ import { PostModule } from './post/post.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([PostEffects]),
     PostModule,
-    StoreModule.forRoot({rootState: reducers}),
-    EffectsModule.forRoot([PostEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

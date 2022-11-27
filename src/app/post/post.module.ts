@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
 import { PostComponent } from './post.component';
-import { PostService } from './service/post-service.service';
-import { PostEffects } from './store/post.effect';
+import { postFeatureKey, postReducer } from './store/post.reducer';
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        StoreModule.forFeature(postFeatureKey, postReducer)
     ],
     declarations: [
         PostComponent

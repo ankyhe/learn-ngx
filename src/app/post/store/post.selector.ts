@@ -1,11 +1,10 @@
-import { createSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { Post } from "../model/post.model";
-import { State } from "./post.reducer";
+import { postFeatureKey, PostState } from "./post.reducer";
+
+const featureSelector = createFeatureSelector<PostState>(postFeatureKey);
 
 export const getStatePosts = createSelector(
-    (allState: any) => {
-      console.log('selector state is ', allState);
-      return allState['rootState'];
-    },
-    (state: State): Post[] => state.posts
-  );
+  featureSelector,
+  (postState: PostState): Post[] => postState.posts
+);

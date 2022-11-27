@@ -3,14 +3,16 @@ import {
   } from '@ngrx/store';
   import { fetchPostsSuccess } from './post.action';
   import { Post } from '../model/post.model';
+
+  export const postFeatureKey = "post";
   
-  export interface State {
+  export interface PostState {
     posts: Post[]
   }
   
-  const initialState: State = {posts: []};
+  const initialState: PostState = {posts: []};
   
-  export const reducers = createReducer(
+  export const postReducer = createReducer(
     initialState,
     on(fetchPostsSuccess, (_,  { posts }) => {
       console.log('posts of fetchPostsSuccess are ', posts);
