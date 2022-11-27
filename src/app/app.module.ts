@@ -6,9 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from './reducers';
+import { reducers } from './post/store/post.reducer';
 import { PostComponent } from './post/post.component';
-import { PostEffects } from './post.effect';
+import { PostEffects } from './post/store/post.effect';
 
 @NgModule({
   declarations: [

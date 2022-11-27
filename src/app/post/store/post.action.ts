@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Post } from './post.model';
+import { Post } from '../model/post.model';
 
 export const fetchPosts = createAction('[Post Component] FetchPosts');
 export const fetchPostsSuccess = createAction('[Post Component] FetchPostsSuccess',  props<{posts: Post[]}>());

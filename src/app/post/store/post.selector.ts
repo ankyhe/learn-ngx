@@ -1,6 +1,6 @@
 import { createSelector } from "@ngrx/store";
-import { Post } from "./post.model";
-import { State } from "./reducers";
+import { Post } from "../model/post.model";
+import { State } from "./post.reducer";
 
 export const getStatePosts = createSelector(
     (allState: any) => {
