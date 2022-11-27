@@ -9,7 +9,7 @@ import { getStatePosts } from './store/post.selector'
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.sass']
+  styleUrls: ['./post.component.sass'],
 })
 export class PostComponent implements OnInit {
   posts$: Observable<Post[]>;

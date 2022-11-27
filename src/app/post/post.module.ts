@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { PostComponent } from './post.component';
+import { PostService } from './service/post-service.service';
 import { PostEffects } from './store/post.effect';
 
 @NgModule({
