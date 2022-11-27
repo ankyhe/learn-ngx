@@ -7,18 +7,18 @@ import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './post/store/post.reducer';
-import { PostComponent } from './post/post.component';
 import { PostEffects } from './post/store/post.effect';
+import { PostModule } from './post/post.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PostComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    PostModule,
     StoreModule.forRoot({rootState: reducers}),
     EffectsModule.forRoot([PostEffects])
   ],
